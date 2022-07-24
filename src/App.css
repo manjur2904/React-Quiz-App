@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+.app{
+    height: 100vh;
+    display: flex;
+    background-color: #6c3031;
+    color: rgb(184, 208, 26);
+
+}
+.main{
+    width: 75%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), 
+    #020230), url("./assets/img6.jpg") center;
+    display: flex;
+    flex-direction: column;
+
+}
+.top{
+    height: 50%;
+    position: relative;
+}
+.heading{
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin: auto;
+    color: rgb(16, 16, 62);
+    margin-top: 5%;
+    text-align: center;
+    /* background: antiquewhite; */
+    width: 70%;
+}
+.timer{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 4px solid rgb(170, 235, 4);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* postion should mention first for  */
+    position: absolute;
+    bottom: 1rem;
+    left: 5rem;
+}
+.bottom{
+    height: 50%;
+}
+.quiz{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.question{
+    width: 80%;
+    background: linear-gradient(#c10d25, black);
+    border: 2px solid white;
+    text-align: center;
+    padding: 1.1rem;
+    border-radius: 1.1rem;
+    font-size: 1.2rem;
+
+}
+.answers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.answer{
+    width: 40%;
+    padding: 2%;
+    text-align: center;
+    background: linear-gradient(#ba1c1c, #22074d);
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin: 0 10px 20px 10px;
+    cursor: pointer;
+}
+.answer:hover,
+.answer.active{
+    background: mediumblue;
+}
+.answer.correct{
+    animation: correct 3s ease forwards;
+}
+@keyframes correct {
+    0%, 22%, 42%{
+        background: mediumblue;
+    }
+    20%, 40%, 60%{
+        background: linear-gradient(#0e0124, #22074d);
+    }
+    62%, 100%{
+        background: green;
+    }
+}
+.answer.wrong{
+    animation: wrong 3s ease forwards;
+}
+@keyframes wrong {
+    0%, 22%, 42%{
+        background: mediumblue;
+    }
+    20%, 40%, 60%{
+        background: linear-gradient(#0e0124, #22074d);
+    }
+    62%, 100%{
+        background: red;
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pyramid{
+    width: 25%;
+    background: linear-gradient(to  bottom, rgba(205, 23, 23, 0), 
+    #020230), url("./assets/right3.jpg") center ;
+    /* opacity: 0.7; */
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+.moneyList{
+    list-style: none;
+    width: 100%;
+    padding: 7%;
+}
+.moneyListItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3rem;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    /* text-align: center; */
+}
+.moneyListItem.active{
+    /* background-color: teal; */
+    background-color: rgb(233, 36, 36);
+}
+.moneyListItemNumber{
+    font-size: 1rem;
+    font-weight: 100;
+    width: 30%;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: rgb(170, 235, 4);
+}
+.moneyListItemAmount{
+    font-size: 1rem;
+    font-weight: 300;
+    width: 70%;
+    /* margin-left: 15%; */
+    text-align: center;
+    font-weight: bold;
+    color: rgb(170, 235, 4);
+    /* text-align: center; */
+}
+.endText{
+    /* position: relative; */
+    /* top: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.startInput{
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.startInput:focus{
+    outline: none;
+}
+.startButton{
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    color: yellow;
+    background-color: green;
+    cursor: pointer;
+    
 }
